@@ -44,7 +44,7 @@ public class GroupController {
         return "group_add_page";
     }
 
-    @RequestMapping(value="/group/add",
+    @RequestMapping(value = "/group/add",
             method = RequestMethod.POST)
     public String groupAdd(@RequestParam String name) {
         groupService.addGroup(new Group(name));

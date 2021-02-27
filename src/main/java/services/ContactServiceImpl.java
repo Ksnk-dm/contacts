@@ -30,18 +30,18 @@ public class ContactServiceImpl implements ContactService {
         contactDAO.delete(ids);
     }
 
-    @Transactional(readOnly=true)
+    @Transactional(readOnly = true)
     public List<Group> listGroups() {
         return groupDAO.list();
     }
 
 
-    @Transactional(readOnly=true)
+    @Transactional(readOnly = true)
     public List<Contact> listContacts(Group group, int start, int count) {
         return contactDAO.list(group, start, count);
     }
 
-    @Transactional(readOnly=true)
+    @Transactional(readOnly = true)
     public List<Contact> listContacts(Group group) {
         return contactDAO.list(group, 0, 0);
     }
@@ -51,12 +51,12 @@ public class ContactServiceImpl implements ContactService {
         return contactDAO.count();
     }
 
-    @Transactional(readOnly=true)
+    @Transactional(readOnly = true)
     public Group findGroup(long id) {
         return groupDAO.findOne(id);
     }
 
-    @Transactional(readOnly=true)
+    @Transactional(readOnly = true)
     public List<Contact> searchContacts(String pattern) {
         return contactDAO.list(pattern);
     }

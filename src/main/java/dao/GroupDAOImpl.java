@@ -46,14 +46,15 @@ public class GroupDAOImpl implements GroupDAO {
         TypedQuery<Long> query = entityManager.createQuery("SELECT COUNT(c) FROM Group c", Long.class);
         return query.getSingleResult();
     }
+
     @Override
     public List<Group> list(Group group,
-                              int start,
-                              int count) {
+                            int start,
+                            int count) {
         TypedQuery<Group> query;
 
 
-            query = entityManager.createQuery("SELECT c FROM Group c ORDER BY c.id DESC", Group.class);
+        query = entityManager.createQuery("SELECT c FROM Group c ORDER BY c.id DESC", Group.class);
 
 
         if (start >= 0) {

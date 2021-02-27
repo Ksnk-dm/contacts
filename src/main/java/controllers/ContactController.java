@@ -15,7 +15,6 @@ import services.ContactService;
 import static controllers.GroupController.DEFAULT_GROUP_ID;
 
 
-
 @Controller
 public class ContactController {
     private static final int ITEMS_PER_PAGE = 6;
@@ -63,7 +62,7 @@ public class ContactController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @RequestMapping(value="/contact/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/contact/add", method = RequestMethod.POST)
     public String contactAdd(@RequestParam(value = "group") long groupId,
                              @RequestParam String name,
                              @RequestParam String surname,
